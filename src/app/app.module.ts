@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { JwtModule } from '@auth0/angular-jwt';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,11 @@ export function tokenGetter() {
     ListaAplicacionComponent,
     RevisionAplicacionComponent
   ],
+  providers:[
+    {
+      provide: LocationStrategy, useClass: HashLocationStrategy
+    }
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -47,7 +53,6 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
