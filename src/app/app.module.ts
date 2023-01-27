@@ -33,9 +33,9 @@ export function tokenGetter() {
     RevisionAplicacionComponent
   ],
   providers:[
-    {
-      provide: LocationStrategy, useClass: HashLocationStrategy
-    }
+    // {
+    //   provide: LocationStrategy, useClass: HashLocationStrategy
+    // }
   ],
   imports: [
     BrowserModule,
